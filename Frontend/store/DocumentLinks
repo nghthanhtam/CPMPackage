@@ -1,0 +1,96 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userClassName": "DocumentLinks",
+        "model": "DocumentLink",
+        "remoteSort": true,
+        "storeId": "DocumentLinks"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "remoteSort": "boolean",
+        "storeId": "string"
+    },
+    "designerId": "cfdec7fe-ce74-403c-ab87-7e4423107f40",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "    create: 'FrmFdDocument.addLink',\r",
+                    "    read:\t'FrmFdDocument.getLink',\r",
+                    "    update:\t'FrmFdDocument.updLink',\r",
+                    "    destroy:'FrmFdDocument.delLink'\r",
+                    "}"
+                ],
+                "extraParams": [
+                    "{\r",
+                    "    linkto: -1,\r",
+                    "    referencekey1: -1,\r",
+                    "    referencekey2: -1,\r",
+                    "    referencekey3: -1,\r",
+                    "    referencekey4: -1,\r",
+                    "    referencekey5: -1    \r",
+                    "    \r",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "api": "object",
+                "extraParams": "object"
+            },
+            "name": "MyDirectProxy28",
+            "designerId": "e60379ab-6db1-4651-b34f-d576533c8ef6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data",
+                        "totalProperty": "totalCount"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string",
+                        "totalProperty": "string"
+                    },
+                    "name": "MyJsonReader28",
+                    "designerId": "8d2ab42f-28e8-4d29-9e66-e1498f28d48e"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "configAlternates": {
+                        "writeAllFields": "boolean"
+                    },
+                    "name": "MyJsonWriter25",
+                    "designerId": "5473836c-7752-4dc7-93fd-c32df14e48ec"
+                }
+            ]
+        }
+    ]
+}

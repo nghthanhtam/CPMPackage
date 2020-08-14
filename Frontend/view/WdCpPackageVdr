@@ -1,0 +1,1080 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wdcppackagevdr",
+        "designer|userClassName": "WdCpPackageVdr",
+        "height": 500,
+        "modal": true,
+        "scrollable": "vertical",
+        "title": "Sự kiện và ghi chú",
+        "width": 600
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto",
+        "scrollable": "auto"
+    },
+    "name": "WdCpPackageMtr1",
+    "designerId": "edcc9dea-a958-4fc2-a50d-6be5c431af2b",
+    "viewControllerInstanceId": "8ae237ce-320b-4925-b787-bcc17029252f",
+    "viewModelInstanceId": "88fcd025-2a3c-4de4-8e8f-abf8d055c66f",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": "10 30 10 20",
+                "container|align": "stretch",
+                "fieldDefaults": [
+                    "{ labelSeparator: '', labelWidth: 120}",
+                    ""
+                ],
+                "layout": "vbox",
+                "reference": "frmdetail",
+                "scrollable": "vertical"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|align": "string",
+                "fieldDefaults": "object",
+                "layout": "string",
+                "reference": "string",
+                "scrollable": "auto"
+            },
+            "name": "MyForm3",
+            "designerId": "96d3e1a0-47de-4b66-bc8e-57eca43a8224",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "autoLoadOnValue": true,
+                        "displayField": "name",
+                        "fieldLabel": "Nhà thầu",
+                        "itemId": "vendorcode",
+                        "name": "vendorcode",
+                        "pageSize": 10,
+                        "reference": "vendorcode",
+                        "store": [
+                            "{vendorcodes}"
+                        ],
+                        "value": [
+                            "{bindRecord.vendorcode}"
+                        ],
+                        "valueField": "nadcode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "valueField": "datafield",
+                        "value": "binding",
+                        "autoLoadOnValue": "boolean",
+                        "pageSize": "number",
+                        "allowBlank": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MyComboBox98",
+                    "designerId": "8c24928c-4731-4c9e-ab99-1dcc6861abbc",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onVendorcodeSelect",
+                                "implHandler": [
+                                    "this.getViewModel().set('bindRecord.vendorname', record.get('name'));"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onVendorcodeSelect",
+                            "designerId": "e9633d3d-6d8b-4c90-923c-08e86981c367"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "fieldLabel": "Tình trạng",
+                        "name": "status",
+                        "reference": "status",
+                        "store": [
+                            "{statusStore}"
+                        ],
+                        "value": [
+                            "{bindRecord.status}"
+                        ],
+                        "valueField": "code"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "valueField": "datafield",
+                        "value": "binding"
+                    },
+                    "name": "MyComboBox85",
+                    "designerId": "2684571e-4307-439d-9ad7-9324c976fc64"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Ngày mời thầu",
+                        "maxWidth": 240,
+                        "name": "invitationdate",
+                        "reference": "invitationdate",
+                        "value": [
+                            "{bindRecord.invitationdate}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding"
+                    },
+                    "name": "MyDateField33",
+                    "designerId": "3327439b-727f-446b-b69b-855dcf2adc58",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onInvitationdateBlur",
+                                "implHandler": [
+                                    "var me = this,",
+                                    "    responsedate = me.lookupReference('responsedate');",
+                                    "responsedate.setMinValue(component.value);"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onInvitationdateBlur",
+                            "designerId": "dd87e854-0369-43d3-8efb-dc43f3f62732"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Ngày phản hồi",
+                        "maxWidth": 240,
+                        "name": "responsedate",
+                        "reference": "responsedate",
+                        "value": [
+                            "{bindRecord.responsedate}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding"
+                    },
+                    "name": "MyDateField38",
+                    "designerId": "034b9d14-5e6c-41ae-8059-217b4e6536c5",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onResponsedateBlur",
+                                "implHandler": [
+                                    "var me = this,",
+                                    "    invitationdate = me.lookupReference('invitationdate');",
+                                    "invitationdate.setMaxValue(component.value);"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onResponsedateBlur",
+                            "designerId": "cf3d7639-2468-455e-8588-1915595b32d4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Điểm",
+                        "minValue": 0,
+                        "name": "mark",
+                        "reference": "mark",
+                        "value": [
+                            "{bindRecord.mark}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding",
+                        "minValue": "number"
+                    },
+                    "name": "MyNumberField56",
+                    "designerId": "0657a286-f594-46b7-9417-bd8da0524eb7"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Đánh giá tổng quan",
+                        "name": "overal",
+                        "reference": "overal",
+                        "value": [
+                            "{bindRecord.overal}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding"
+                    },
+                    "name": "MyTextField75",
+                    "designerId": "0c9ae443-b0b1-47de-bbd9-cfe899405253"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Số hợp đồng",
+                        "name": "contractno",
+                        "reference": "contractno",
+                        "value": [
+                            "{bindRecord.contractno}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding"
+                    },
+                    "name": "MyTextField108",
+                    "designerId": "e048f220-cbba-411e-8868-c524ac6b2b56"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "fieldLabel": "Đánh giá kỹ thuật",
+                        "name": "techevaluate",
+                        "reference": "techevaluate",
+                        "store": [
+                            "{StoreWPFX}"
+                        ],
+                        "value": [
+                            "{bindRecord.techevaluate}"
+                        ],
+                        "valueField": "code"
+                    },
+                    "configAlternates": {
+                        "value": "binding",
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "name": "string",
+                        "reference": "string",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox101",
+                    "designerId": "59f99533-9512-4768-acfd-eaccb2911f1f"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": "mynumberfield",
+                        "fieldLabel": "Giá dự thầu",
+                        "minValue": 0,
+                        "name": "bidprice",
+                        "reference": "bidprice",
+                        "value": [
+                            "{bindRecord.bidprice}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding",
+                        "minValue": "number",
+                        "designer|createAlias": "string"
+                    },
+                    "name": "MyNumberField58",
+                    "designerId": "6420c7b8-86fb-4bf0-b1c2-820fb98b2b2d",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBidPriceBlur",
+                                "implHandler": [
+                                    "this.calTotal(); "
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBidPriceBlur",
+                            "designerId": "2f5eb442-7b28-430c-a344-e201aa6cdfdd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": "mynumberfield",
+                        "fieldLabel": "Tác động chi phí ",
+                        "minValue": 0,
+                        "name": "impactamt",
+                        "reference": "impactamt",
+                        "value": [
+                            "{bindRecord.impactamt}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding",
+                        "minValue": "number",
+                        "designer|createAlias": "string"
+                    },
+                    "name": "MyNumberField57",
+                    "designerId": "d0558ec4-cd33-4ace-b02e-81e88f517515",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImpactAmtBlur",
+                                "implHandler": [
+                                    "this.calTotal();"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onImpactAmtBlur",
+                            "designerId": "f2f8f024-b36b-4986-8a16-be2d4dff8856"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": "mynumberfield",
+                        "fieldLabel": "Chi phí khác",
+                        "minValue": 0,
+                        "name": "externalamt",
+                        "reference": "externalamt",
+                        "value": [
+                            "{bindRecord.externalamt}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding",
+                        "minValue": "number",
+                        "designer|createAlias": "string"
+                    },
+                    "name": "MyNumberField31",
+                    "designerId": "072f6eec-5060-46c7-a8f3-0bd22d7928e1",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onExternalAmtBlur",
+                                "implHandler": [
+                                    "this.calTotal();"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onExternalAmtBlur",
+                            "designerId": "9e31b173-248c-4b99-8603-f4e95507b3c9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": "mynumberfield",
+                        "fieldLabel": "Giảm giá",
+                        "minValue": 0,
+                        "name": "discountamt",
+                        "reference": "discountamt",
+                        "value": [
+                            "{bindRecord.discountamt}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding",
+                        "minValue": "number",
+                        "designer|createAlias": "string"
+                    },
+                    "name": "MyNumberField59",
+                    "designerId": "346dca46-ad57-42de-903c-96522358ed67",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDiscountAmtBlur",
+                                "implHandler": [
+                                    "this.calTotal();"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDiscountAmtBlur",
+                            "designerId": "9f8ca098-8abb-49d0-8115-ffab6dee9a0a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoLoadOnValue": true,
+                        "displayField": "description",
+                        "fieldLabel": "Thuế VAT",
+                        "name": "vatcode",
+                        "pageSize": 10,
+                        "reference": "vatcode",
+                        "store": [
+                            "{cstaxes}"
+                        ],
+                        "value": [
+                            "{bindRecord.vatcode}"
+                        ],
+                        "valueField": "taxcode"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "store": "binding",
+                        "displayField": "datafield",
+                        "valueField": "datafield",
+                        "value": "binding",
+                        "autoLoadOnValue": "boolean",
+                        "pageSize": "number"
+                    },
+                    "name": "MyComboBox86",
+                    "designerId": "5ec3786b-0f98-485c-a521-1b1aad9b1f5d",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onVatcodeBlur",
+                                "implHandler": [
+                                    "var me = this,",
+                                    "    vm\t= me.getViewModel(),",
+                                    "    rec\t= vm.get('bindRecord');",
+                                    "",
+                                    "FrmCsTax.get({taxcode:component.value},function(r){",
+                                    "    if(r && r.success){",
+                                    "        if(r.data.length > 0){",
+                                    "            vm.set('bindRecord.vatrate',r.data[0].rate);",
+                                    "            let vatamt =",
+                                    "                (rec.get('bidprice')+rec.get('impactamt')+rec.get('externalamt') - rec.get('discountamt'))*rec.get('vatrate')/100;",
+                                    "            rec.set('vatamt',vatamt);",
+                                    "            me.vatChange();",
+                                    "        }",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onVatcodeBlur",
+                            "designerId": "933f0c16-b347-4e83-af16-9af9827c0fdc"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animateShadow": true,
+                        "designer|createAlias": "mynumberfield",
+                        "fieldLabel": "Tiền thuế",
+                        "minValue": 0,
+                        "name": "vatamt",
+                        "reference": "vatamt",
+                        "value": [
+                            "{bindRecord.vatamt}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding",
+                        "minValue": "number",
+                        "designer|createAlias": "string",
+                        "animateShadow": "boolean"
+                    },
+                    "name": "MyNumberField61",
+                    "designerId": "c0fd81f2-261a-4fc3-9500-9952de7cb99b",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onVatamtBlur",
+                                "implHandler": [
+                                    "this.calTotal();"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onVatamtBlur",
+                            "designerId": "35e56801-ceba-4aa9-9a6e-4f6fe8e136b3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": "mynumberfield",
+                        "fieldLabel": "Tổng cộng",
+                        "minValue": 0,
+                        "name": "totalawardprice",
+                        "reference": "totalawardprice",
+                        "value": [
+                            "{bindRecord.totalawardprice}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding",
+                        "minValue": "number",
+                        "designer|createAlias": "string"
+                    },
+                    "name": "MyNumberField54",
+                    "designerId": "79872711-6b42-47b1-ab64-0b6b3438c107"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Xếp hạng",
+                        "name": "ranking",
+                        "reference": "ranking",
+                        "value": [
+                            "{bindRecord.ranking}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding"
+                    },
+                    "name": "MyTextField145",
+                    "designerId": "59381235-5856-4b7d-981d-b77d5ab90d89"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": "mynumberfield",
+                        "fieldLabel": "Chênh lệch giá",
+                        "minValue": 0,
+                        "name": "pricedifference",
+                        "reference": "pricedifference",
+                        "value": [
+                            "{bindRecord.pricedifference}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding",
+                        "minValue": "number",
+                        "designer|createAlias": "string"
+                    },
+                    "name": "MyNumberField62",
+                    "designerId": "bb9f8d9c-0eed-40bc-b3c5-79f6ce12ba89"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Đánh giá sơ bộ",
+                        "name": "pevaluation",
+                        "reference": "pevaluation",
+                        "value": [
+                            "{bindRecord.pevaluation}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding"
+                    },
+                    "name": "MyTextField147",
+                    "designerId": "03e51f7c-c1d2-4392-b2f0-4619b2c3b2b3"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Đánh giá thương mại",
+                        "name": "commercialevaluation",
+                        "reference": "commercialevaluation",
+                        "value": [
+                            "{bindRecord.commercialevaluation}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding"
+                    },
+                    "name": "MyTextField148",
+                    "designerId": "3fe1829e-c359-49b5-aec5-f82ef7a755ad"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Đánh giá kỹ thuật",
+                        "name": "techevaludation",
+                        "reference": "techevaludation",
+                        "value": [
+                            "{bindRecord.techevaludation}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding"
+                    },
+                    "name": "MyTextField149",
+                    "designerId": "d5e7e094-13b0-4f0b-959a-dd8fa04c39ed"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Ghi chú",
+                        "name": "comments",
+                        "reference": "comments",
+                        "value": [
+                            "{bindRecord.comments}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "maxWidth": "number",
+                        "reference": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "value": "binding"
+                    },
+                    "name": "MyTextField150",
+                    "designerId": "9daa3612-1dd0-4192-9330-bfc86774c0be"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "footer",
+                "dock": "bottom",
+                "ui": "footer"
+            },
+            "configAlternates": {
+                "designer|uiInterfaceName": "string",
+                "dock": "string",
+                "ui": "string"
+            },
+            "name": "MyToolbar3",
+            "designerId": "8383c445-0022-4793-9d82-b95dab319b5a",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill22",
+                    "designerId": "98c05742-cecc-4d3d-af99-d719fea1dabe"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-close",
+                        "layout|flex": null,
+                        "text": "Đóng",
+                        "width": 80
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "scale": "string",
+                        "text": "string",
+                        "width": "auto",
+                        "iconCls": "string"
+                    },
+                    "name": "MyButton134",
+                    "designerId": "d6e43b87-659b-4f67-9280-7299d811714e",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCancelClick",
+                                "implHandler": [
+                                    "this.getView().close();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onCancelClick",
+                            "designerId": "e3c2983a-e0ef-4099-ba29-7722c0797a1f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-save",
+                        "layout|flex": null,
+                        "text": "Lưu",
+                        "width": 80
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "scale": "string",
+                        "text": "string",
+                        "width": "auto",
+                        "iconCls": "string"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "51017376-8bde-4179-9e32-573b625f8af8",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSaveClick",
+                                "implHandler": [
+                                    "var me\t= this,",
+                                    "    v\t= me.getView(),",
+                                    "    vm\t= me.getViewModel();",
+                                    "",
+                                    "if(button.up('panel').down('form').isValid()){",
+                                    "    v.fireEvent('successCallback', vm.get('bindRecord'));",
+                                    "    v.close();",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onSaveClick",
+                            "designerId": "d909ff2e-a717-4b1d-91c5-ed705edd59cf"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

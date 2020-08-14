@@ -1,0 +1,66 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "{code: 'C',name: 'C - Bình luận'},",
+            "{code: 'N',name: 'N - Tạo mới'},",
+            "{code: 'U',name: 'U - Cập nhật'},",
+            "{code: 'D',name: 'D - Xóa'},",
+            "{code: 'E',name: 'E - Email'},",
+            "{code: 'S',name: 'S - SMS'},",
+            "{code: 'M',name: 'M - Ghép mã'},",
+            "{code: 'P',name: 'P - In'},",
+            "{code: 'R',name: 'R - Ghi âm'}",
+            "]"
+        ],
+        "designer|userClassName": "StActions",
+        "storeId": "StActions"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "storeId": "string"
+    },
+    "name": "MyStore150",
+    "designerId": "58e81afb-7360-4197-a1e6-7ec76b0de0d7",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "code"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField723",
+            "designerId": "fa10a904-153d-4577-8f6e-1ef281c28c03"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField879",
+            "designerId": "3c7af951-1361-423c-9b6f-9f73aad37d5d"
+        }
+    ]
+}

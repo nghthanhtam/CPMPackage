@@ -1,0 +1,1529 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "vendorcompletepanel",
+        "designer|userClassName": "VendorCompletePanelViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "ProgressLogPanelViewModel1",
+    "designerId": "34394862-eab3-4f6c-a1de-1221f1fc6502",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "groupField": "chaptername",
+                "name": "masterdetails"
+            },
+            "configAlternates": {
+                "data": "array",
+                "name": "string",
+                "model": "model",
+                "groupField": "datafield"
+            },
+            "name": "MyStore22",
+            "designerId": "ef8ce947-eeab-4415-ab28-207f0e41309c",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Direct",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": [
+                            "{",
+                            "read: 'FrmCpWorkCom.getDetails',",
+                            "create: 'FrmCpWorkCom.addVendorDetail',",
+                            "update: 'FrmCpWorkCom.updVendorDetail',",
+                            "destroy: 'FrmCpWorkCom.delVendorDetail'",
+                            "",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "api": "object",
+                        "extraParams": "object"
+                    },
+                    "name": "MyDirectProxy4",
+                    "designerId": "80ec4694-e1c2-4bd1-a69b-16b98d764fd3",
+                    "cn": [
+                        {
+                            "type": "Ext.data.writer.Json",
+                            "reference": {
+                                "name": "writer",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonWriter6",
+                            "designerId": "f2c0050e-c643-463d-ab82-cbaf9ae73faa"
+                        },
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "data",
+                                "totalProperty": "totalCount"
+                            },
+                            "configAlternates": {
+                                "rootProperty": "string",
+                                "totalProperty": "string"
+                            },
+                            "name": "MyJsonReader6",
+                            "designerId": "9a5bef9a-f6b8-430c-bbd1-d6f63e1d7aed"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "critical": true,
+                        "name": "cwcref"
+                    },
+                    "configAlternates": {
+                        "name": "string",
+                        "critical": "boolean"
+                    },
+                    "name": "MyField631",
+                    "designerId": "d9d843d0-1f48-4ba5-8e1b-29e0b337f2a1"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "critical": true,
+                        "name": "itemid"
+                    },
+                    "configAlternates": {
+                        "name": "string",
+                        "critical": "boolean"
+                    },
+                    "name": "MyField632",
+                    "designerId": "61965e6e-60cc-4032-8d3d-1a9ec5537fda"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "critical": true,
+                        "name": "evagroup"
+                    },
+                    "configAlternates": {
+                        "name": "string",
+                        "critical": "boolean"
+                    },
+                    "name": "MyField633",
+                    "designerId": "b45fbef7-7286-4f32-b815-b997e4a59b55"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "itemcate"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField621",
+                    "designerId": "02643112-4344-473d-8555-70353ba9169c"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "itemdesc"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField625",
+                    "designerId": "769b71b0-c7aa-496e-8d41-a6eb1f999a51"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "locdesc"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField629",
+                    "designerId": "19fb18f5-47ab-4b37-933d-10f6590d198c"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "unit"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField634",
+                    "designerId": "5de3d62e-4310-46ee-8694-e60fbc52308e"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "percentdone"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber176",
+                    "designerId": "455355d2-1c6e-4a32-b161-e4fb96b78f05"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "completedqty"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber177",
+                    "designerId": "22f43212-d075-410a-96a7-ab97759b5be3"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "completedvalue"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber178",
+                    "designerId": "fe5e19da-7922-4803-a852-a16470c0888d"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "quantity"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber84",
+                    "designerId": "0896f38d-cb87-4d22-90cb-9f899e435f08"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "totalamt"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber85",
+                    "designerId": "6d01fdd9-3e00-4f25-bf99-5547aea4d0c8"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "orate"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber87",
+                    "designerId": "d37a4fb5-6541-4904-bb9b-79c9f9647404"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "oqty"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber92",
+                    "designerId": "951820df-b701-48f7-a75b-3ee8a2fe5b8b"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "ovalue"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber95",
+                    "designerId": "dde9adde-9b18-47a9-ac94-5f7abdbd00e1"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "ovrate"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber97",
+                    "designerId": "3e177501-66e3-4e45-8bff-f3d5b98101e2"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "ovqty"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber98",
+                    "designerId": "4bed2949-159c-4478-9b3d-2229319376b7"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "ovvalue"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber99",
+                    "designerId": "e5fc8322-a87b-4998-bf09-22c461038dfd"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "rate"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber91",
+                    "designerId": "470e5d1a-4370-4d21-8582-4e97f8224371"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "qty"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber89",
+                    "designerId": "3b1f22d6-28cb-4fd0-82b3-f74cef4b9629"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "value"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber90",
+                    "designerId": "3dd912c7-7316-4a4b-b409-2606cbf60f90"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "vrate"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber184",
+                    "designerId": "7f395ee9-77da-402e-8d66-093517918bd0"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "vqty"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber185",
+                    "designerId": "b868c366-1717-4ca8-b67f-9b7455921d4c"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "vvalue"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyNumber186",
+                    "designerId": "7fe330b2-bed7-4fa4-8d46-ea9f5bebab15"
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "sumrate",
+                        "persist": false
+                    },
+                    "configAlternates": {
+                        "name": "string",
+                        "persist": "boolean"
+                    },
+                    "name": "MyNumber96",
+                    "designerId": "0d304719-0019-473b-b732-e8147a29a8d5",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "v",
+                                    "rec"
+                                ],
+                                "fn": "convert",
+                                "implHandler": [
+                                    "return rec.get('orate') +  rec.get('rate');"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "convert",
+                            "designerId": "a9279600-b7bf-47c3-a878-550b7ba36db7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "sumqty",
+                        "persist": false
+                    },
+                    "configAlternates": {
+                        "name": "string",
+                        "persist": "boolean"
+                    },
+                    "name": "MyNumber100",
+                    "designerId": "fd813873-d619-4074-a0df-d45c0fa8104d",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "v",
+                                    "rec"
+                                ],
+                                "fn": "convert",
+                                "implHandler": [
+                                    "return rec.get('oqty') +  rec.get('qty');"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "convert",
+                            "designerId": "ae9e1dac-6c22-4bfa-add0-ad48077cb181"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "sumvalue",
+                        "persist": false
+                    },
+                    "configAlternates": {
+                        "name": "string",
+                        "persist": "boolean"
+                    },
+                    "name": "MyNumber101",
+                    "designerId": "2f1dc6de-9ff0-44b8-8f0c-4fd2faa5841d",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "v",
+                                    "rec"
+                                ],
+                                "fn": "convert",
+                                "implHandler": [
+                                    "return rec.get('ovalue') +  rec.get('value');"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "convert",
+                            "designerId": "2ea271fa-b5e5-4f54-a8b1-ca3f18255bb2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "sumrate1",
+                        "persist": false
+                    },
+                    "configAlternates": {
+                        "name": "string",
+                        "persist": "boolean"
+                    },
+                    "name": "MyNumber187",
+                    "designerId": "1eca5a54-6f14-4725-abf1-8d3fd739b33e",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "v",
+                                    "rec"
+                                ],
+                                "fn": "convert",
+                                "implHandler": [
+                                    "return rec.get('ovrate') + rec.get('vrate');"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "convert",
+                            "designerId": "60d16bc0-1aed-4cf6-8753-0117ccf65efb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "sumqty1",
+                        "persist": false
+                    },
+                    "configAlternates": {
+                        "name": "string",
+                        "persist": "boolean"
+                    },
+                    "name": "MyNumber188",
+                    "designerId": "82629c5a-8e18-42a6-a476-88fe690f38da",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "v",
+                                    "rec"
+                                ],
+                                "fn": "convert",
+                                "implHandler": [
+                                    "return rec.get('ovqty') +  rec.get('vqty');"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "convert",
+                            "designerId": "4ab21a46-2040-4d9d-9966-f9c717d69ae5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Number",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "sumvalue1",
+                        "persist": false
+                    },
+                    "configAlternates": {
+                        "name": "string",
+                        "persist": "boolean"
+                    },
+                    "name": "MyNumber189",
+                    "designerId": "25be4a5c-d49c-4608-b42a-1a50d8df6ba1",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "v",
+                                    "rec"
+                                ],
+                                "fn": "convert",
+                                "implHandler": [
+                                    "return rec.get('ovvalue') +  rec.get('vvalue');"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "convert",
+                            "designerId": "0f057e47-801b-4b2e-af66-284aa84dc6f1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "comments"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField635",
+                    "designerId": "e6349057-3aea-4ce2-af93-531000046a3a"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "critical": true,
+                        "name": "contractcode"
+                    },
+                    "configAlternates": {
+                        "critical": "boolean",
+                        "name": "string"
+                    },
+                    "name": "MyField783",
+                    "designerId": "8264ddef-05b4-4133-b8b8-e2eac0d093ce"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "chaptername"
+                    },
+                    "configAlternates": {
+                        "critical": "boolean",
+                        "name": "string"
+                    },
+                    "name": "MyField884",
+                    "designerId": "131202cc-280f-4473-8b8d-904258f7fe72"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "chaptercode"
+                    },
+                    "configAlternates": {
+                        "critical": "boolean",
+                        "name": "string"
+                    },
+                    "name": "MyField885",
+                    "designerId": "35d136e4-b7cd-4730-bf3a-3c48e2608579"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.BufferedStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "CpWorkCom",
+                "name": "masters"
+            },
+            "configAlternates": {
+                "leadingBufferZone": "number",
+                "model": "model",
+                "name": "string",
+                "pageSize": "number",
+                "purgePageCount": "number",
+                "groupField": "datafield"
+            },
+            "name": "MyBufferedStore7",
+            "designerId": "efef3b8c-8cf7-4df3-aecf-faa2b79d6135",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Direct",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": [
+                            "{",
+                            "read: 'FrmCpWorkCom.get'",
+                            "}"
+                        ],
+                        "extraParams": [
+                            "{",
+                            "project:'-'",
+                            "}"
+                        ],
+                        "filterParam": "filters"
+                    },
+                    "configAlternates": {
+                        "api": "object",
+                        "filterParam": "string",
+                        "extraParams": "object"
+                    },
+                    "name": "MyDirectProxy7",
+                    "designerId": "3cee0d85-a448-4bd8-a767-3cb2e0366d5b",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "data",
+                                "totalProperty": "totalCount"
+                            },
+                            "configAlternates": {
+                                "rootProperty": "string",
+                                "totalProperty": "string"
+                            },
+                            "name": "MyJsonReader7",
+                            "designerId": "1bac91fc-d2ba-47b3-b35b-069ba31238f2"
+                        },
+                        {
+                            "type": "Ext.data.writer.Json",
+                            "reference": {
+                                "name": "writer",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyJsonWriter7",
+                            "designerId": "2df90a06-a279-481a-85f0-fc47d83943e2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoLoad": false,
+                "name": "dagids",
+                "remoteFilter": true
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string",
+                "autoLoad": "boolean",
+                "remoteFilter": "boolean"
+            },
+            "name": "MyStore2",
+            "designerId": "fc37c61b-7baf-41ec-a6e5-e0462cc34110",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Direct",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": [
+                            "{",
+                            "read: 'FrmCsDataAccessGroup.getCombo'",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "api": "object"
+                    },
+                    "name": "MyDirectProxy",
+                    "designerId": "b6f2819a-dc22-41fb-815f-91320ff89d4b",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "data",
+                                "totalProperty": "totalCount"
+                            },
+                            "configAlternates": {
+                                "rootProperty": "string",
+                                "totalProperty": "string"
+                            },
+                            "name": "MyJsonReader",
+                            "designerId": "57b55a22-0f9b-44f2-8949-af1f4844ba6c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "dagid"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField164",
+                    "designerId": "9b0fd1a5-c595-45f2-921d-94767e9aae5f"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "name"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField173",
+                    "designerId": "1b73bffd-3459-44f3-bd0a-3522e2699852"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "contracts",
+                "remoteFilter": true
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string",
+                "autoLoad": "boolean",
+                "remoteFilter": "boolean"
+            },
+            "name": "MyStore4",
+            "designerId": "0f3d91a7-d694-43e3-b8e9-504bea932a7c",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Direct",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": [
+                            "{",
+                            "read: 'FrmCpContract.getCombo'",
+                            "}"
+                        ],
+                        "extraParams": [
+                            "",
+                            "{",
+                            "status:'A'",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "api": "object",
+                        "extraParams": "object"
+                    },
+                    "name": "MyDirectProxy",
+                    "designerId": "a0687277-1839-4ec6-83d3-bdad2b1393ee",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "data",
+                                "totalProperty": "totalCount"
+                            },
+                            "configAlternates": {
+                                "rootProperty": "string",
+                                "totalProperty": "string"
+                            },
+                            "name": "MyJsonReader",
+                            "designerId": "b5c2a148-7239-4f97-9ec9-b1668d2111d2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "contractcode"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField164",
+                    "designerId": "e904d815-9fcd-4a11-bc28-a2ec0682ffd2"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "contracttitle"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField173",
+                    "designerId": "94397599-7103-42c5-ad3f-f4bf06d1c847"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "vendors",
+                "remoteFilter": true
+            },
+            "configAlternates": {
+                "name": "string",
+                "remoteFilter": "boolean"
+            },
+            "name": "MyStore112",
+            "designerId": "8a23cd7a-3bdb-4654-a330-e4791b469124",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Direct",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": [
+                            "{",
+                            "                    read: 'FrmCsNameAddress.getCombo',",
+                            "                    ",
+                            "                }"
+                        ],
+                        "extraParams": [
+                            "{",
+                            "type: 'S', ",
+                            "status: 'W'",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "api": "object",
+                        "extraParams": "object"
+                    },
+                    "name": "MyDirectProxy35",
+                    "designerId": "eb31684a-c44f-4a64-b106-70c7c5a7249c",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "data",
+                                "totalProperty": "totalCount"
+                            },
+                            "configAlternates": {
+                                "rootProperty": "string",
+                                "totalProperty": "string"
+                            },
+                            "name": "MyJsonReader32",
+                            "designerId": "42599f3d-e879-409d-9e38-f520e8e9fef1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "nadcode"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField623",
+                    "designerId": "00595e37-8edc-4421-bf4b-3b9315a9c2a1"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "name"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField624",
+                    "designerId": "8f83bb2d-b0e2-44b6-bfd9-0e3fe7852f4c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "CpContractIns",
+                "name": "milestones",
+                "remoteFilter": true
+            },
+            "configAlternates": {
+                "name": "string",
+                "remoteFilter": "boolean",
+                "model": "model"
+            },
+            "name": "MyStore113",
+            "designerId": "e876eb21-4d08-406b-9ffd-2d6ed58b7856",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Direct",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": [
+                            "{",
+                            "                    read: 'FrmCpContract.getContractInst',",
+                            "                    ",
+                            "                }"
+                        ]
+                    },
+                    "configAlternates": {
+                        "api": "object",
+                        "extraParams": "object"
+                    },
+                    "name": "MyDirectProxy38",
+                    "designerId": "f21abd59-cfeb-4a5b-ad62-897ff59d199c",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "data",
+                                "totalProperty": "totalCount"
+                            },
+                            "configAlternates": {
+                                "rootProperty": "string",
+                                "totalProperty": "string"
+                            },
+                            "name": "MyJsonReader35",
+                            "designerId": "168ac186-bfb4-4493-b5bf-dd57880d2df5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "csoperatorsA",
+                "remoteFilter": true
+            },
+            "configAlternates": {
+                "name": "string",
+                "remoteFilter": "boolean",
+                "autoLoad": "boolean"
+            },
+            "name": "MyStore116",
+            "designerId": "60df299a-0864-4622-8cd5-f2c973e9f1c6",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Direct",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": [
+                            "{",
+                            "                    read: 'FrmCsOperator.getCombo',",
+                            "                    ",
+                            "                }"
+                        ],
+                        "extraParams": [
+                            "{status: 'W'}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "api": "object",
+                        "extraParams": "object"
+                    },
+                    "name": "MyDirectProxy33",
+                    "designerId": "5f5b423c-8432-44f5-892f-eec76f028b29",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "data",
+                                "totalProperty": "totalCount"
+                            },
+                            "configAlternates": {
+                                "rootProperty": "string",
+                                "totalProperty": "string"
+                            },
+                            "name": "MyJsonReader30",
+                            "designerId": "e1ddc992-918c-4d0a-a4da-b4870a1c865a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "operatorid"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField617",
+                    "designerId": "ddb0035f-9a62-473c-ab3b-a5030e3f07f8"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "name"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField618",
+                    "designerId": "bfa83f10-7174-4747-8364-9f83398b52e8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[{",
+                    "code: 'W',",
+                    "name: 'W - Chờ duyệt'",
+                    "},",
+                    "{",
+                    "code: 'R',",
+                    "name: 'R - Hủy'",
+                    "},",
+                    "{",
+                    "code: 'A',",
+                    "name: 'A - Đã duyệt'",
+                    "}]"
+                ],
+                "name": "StoreWAR"
+            },
+            "configAlternates": {
+                "data": "array",
+                "name": "string"
+            },
+            "name": "MyStore117",
+            "designerId": "fdf395b3-dcc0-48ae-895c-46ba24b91dd6",
+            "cn": [
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "code"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField619",
+                    "designerId": "947fd31c-b277-43ba-b690-252f05f93cb6"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "name"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField620",
+                    "designerId": "27fd48c0-6074-447f-b693-318ead2ecdc9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "hremployees",
+                "remoteFilter": true
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string",
+                "remoteFilter": "boolean"
+            },
+            "name": "MyStore120",
+            "designerId": "61330966-1c90-4401-940b-57eaa8b3b176",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Direct",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": [
+                            "{",
+                            "read: 'FrmHrEmployee.getCombo'",
+                            "}"
+                        ],
+                        "extraParams": [
+                            "{",
+                            "status: 'W'",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "api": "object",
+                        "extraParams": "object"
+                    },
+                    "name": "MyDirectProxy24",
+                    "designerId": "514dfb13-8b5b-4cec-8101-6d6eb931a738",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "data",
+                                "totalProperty": "totalCount"
+                            },
+                            "configAlternates": {
+                                "rootProperty": "string",
+                                "totalProperty": "string"
+                            },
+                            "name": "MyJsonReader20",
+                            "designerId": "9abae835-353e-41eb-a4a2-ac35ca725f04"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "employee"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField478",
+                    "designerId": "afe11c8c-212a-409f-b7a2-34a6b074c9e4"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "name"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyField479",
+                    "designerId": "d8746320-5734-49f3-b751-c845a88bfaa9"
+                }
+            ]
+        }
+    ]
+}

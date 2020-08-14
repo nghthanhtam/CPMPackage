@@ -1,0 +1,45 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wdcppackageevent",
+        "designer|userClassName": "WdCpPackageEventViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "WdCpContractEventViewController1",
+    "designerId": "45401247-6f5b-4dd2-92e9-c7cca360f06d",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "var me = this,",
+                    "    startdate = me.lookupReference('startdate'),",
+                    "    enddate = me.lookupReference('enddate'),",
+                    "    v = me.getView(),",
+                    "    vm = me.getViewModel();",
+                    "vm.set('bindRecord', v.bindRecord);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "7dfa746f-0d09-47ed-beb4-2a7d27c5bd39"
+        }
+    ]
+}

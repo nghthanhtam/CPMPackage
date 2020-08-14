@@ -1,0 +1,1226 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "locationpanel",
+        "designer|userClassName": "LocationPanel",
+        "layout": "fit"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "layout": "string"
+    },
+    "name": "LocationPanel1",
+    "designerId": "9fec5f2f-2a0a-4cf7-8790-761c3bb3f548",
+    "viewControllerInstanceId": "29bdb417-d653-4d41-ad7a-783f931cb9a4",
+    "viewModelInstanceId": "bfed30cb-f47d-40e2-ba81-90496e593311",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "footer",
+                "dock": "top",
+                "reference": "tbar",
+                "ui": "footer"
+            },
+            "configAlternates": {
+                "designer|uiInterfaceName": "string",
+                "dock": "string",
+                "ui": "string",
+                "reference": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "b2edea61-db4e-4b8a-93f7-f3eaf7fb488e",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-plus-circle",
+                        "itemId": "addbtn",
+                        "layout|flex": null,
+                        "text": "Thêm",
+                        "width": 100
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "width": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton12",
+                    "designerId": "dac5f7e6-747a-46ef-a8ae-443c7818d48d",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAddClick",
+                                "implHandler": [
+                                    "// var me = this,",
+                                    "//     v = me.getView(),",
+                                    "//     treeStore = me.getViewModel().getStore('locations'),",
+                                    "//     main\t= v.up('maincontainer'),",
+                                    "//     nRec= Ext.create('tavico.model.CpLocation'),",
+                                    "//     wd\t= Ext.create('tavico.view.WdEditLocation', {",
+                                    "//         bindRecord: nRec",
+                                    "//     });",
+                                    "",
+                                    "// nRec.set({",
+                                    "//     ParentId:'',",
+                                    "//     leaf:true,",
+                                    "//     project:main.projectRecord.get('id')",
+                                    "// });",
+                                    "",
+                                    "// wd.on('successCallback', function(r) {",
+                                    "//     treeStore.getRootNode().appendChild(r);",
+                                    "//     treeStore.sync();",
+                                    "// });",
+                                    "// wd.show();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onAddClick",
+                            "designerId": "08e2136d-37cd-4314-9da7-2a8632b65828"
+                        },
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 120
+                            },
+                            "configAlternates": {
+                                "width": "auto"
+                            },
+                            "name": "MyMenu3",
+                            "designerId": "714571f8-c003-4e0e-b3e1-9d8f736d846e",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Vị trí mới"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string"
+                                    },
+                                    "name": "MyMenuItem3",
+                                    "designerId": "c35c214b-2c89-4bb4-9491-1808aee849ac",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMenuAddClick",
+                                                "implHandler": [
+                                                    "var me = this,",
+                                                    "    v = me.getView(),",
+                                                    "    vm = me.getViewModel(),",
+                                                    "    treeStore = me.getViewModel().getStore('locations'),",
+                                                    "    main\t= v.up('maincontainer'),",
+                                                    "    nRec= Ext.create('tavico.model.CpLocation'),",
+                                                    "    mCtr = tavico.app.getController('MainController'),",
+                                                    "    wd,",
+                                                    "    valReadOnly;",
+                                                    "",
+                                                    "mCtr.hasSeq('LCT', function(isSeq) {",
+                                                    "    if (isSeq) {",
+                                                    "        valReadOnly = true;",
+                                                    "    } else {",
+                                                    "        valReadOnly= false;",
+                                                    "    }",
+                                                    "    wd\t= Ext.create('tavico.view.WdEditLocation', {",
+                                                    "        bindRecord: nRec,",
+                                                    "        valReadOnly: valReadOnly",
+                                                    "    });",
+                                                    "",
+                                                    "    nRec.set({",
+                                                    "        Id: vm.get('bindRecord.Id'),",
+                                                    "        ParentId: '',",
+                                                    "        leaf: true,",
+                                                    "        project: main.projectRecord.get('id')",
+                                                    "    });",
+                                                    "",
+                                                    "    wd.on('successCallback', function(r) {",
+                                                    "        treeStore.getRootNode().appendChild(r);",
+                                                    "        treeStore.sync();",
+                                                    "    });",
+                                                    "    wd.down('#Id').setReadOnly(valReadOnly);",
+                                                    "    wd.show();",
+                                                    "});"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onMenuAddClick",
+                                            "designerId": "4a0d7b04-a15d-43a8-baa0-2fdafa5058ad"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Vị trí con"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string"
+                                    },
+                                    "name": "MyMenuItem6",
+                                    "designerId": "57df60a5-08fc-4ab7-ae7b-35d5e6651726",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMenuAddChildClick",
+                                                "implHandler": [
+                                                    "var me = this,",
+                                                    "    v = me.getView(),",
+                                                    "    vm = me.getViewModel(),",
+                                                    "    treepanel = me.lookupReference('treepanel'),",
+                                                    "    treeStore = me.getViewModel().getStore('locations'),",
+                                                    "    main\t= v.up('maincontainer'),",
+                                                    "    nRec= Ext.create('tavico.model.CpLocation'),",
+                                                    "    mCtr = tavico.app.getController('MainController'),",
+                                                    "    selectedNode = treepanel.getSelectionModel().getSelection()[0],",
+                                                    "    wd,",
+                                                    "    valReadOnly;",
+                                                    "",
+                                                    "mCtr.hasSeq('LCT', function(isSeq) {",
+                                                    "    if (isSeq) {",
+                                                    "        valReadOnly = true;",
+                                                    "    } else {",
+                                                    "        valReadOnly= false;",
+                                                    "    }",
+                                                    "});",
+                                                    "",
+                                                    "wd\t= Ext.create('tavico.view.WdEditLocation', {",
+                                                    "    bindRecord: nRec,",
+                                                    "    valReadOnly: valReadOnly",
+                                                    "});",
+                                                    "wd.down('#Id').setReadOnly(valReadOnly);",
+                                                    "",
+                                                    "nRec.set({",
+                                                    "    Id: vm.get('bindRecord.Id'),",
+                                                    "    leaf: true,",
+                                                    "    ParentId: selectedNode.getData().id,",
+                                                    "    project: main.projectRecord.get('id')",
+                                                    "});",
+                                                    "",
+                                                    "wd.on('successCallback', function(r) {",
+                                                    "    selectedNode.appendChild(r);",
+                                                    "    selectedNode.set('leaf',false);",
+                                                    "    treeStore.sync();",
+                                                    "});",
+                                                    "wd.show();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onMenuAddChildClick",
+                                            "designerId": "0cbf9d3c-6fb6-4b51-b9e7-a65840338cf7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Vị trí dưới"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string"
+                                    },
+                                    "name": "MyMenuItem4",
+                                    "designerId": "4931d70b-6c67-46cb-898d-2ef8e15564ed",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMenuAddBotChildClick",
+                                                "implHandler": [
+                                                    "var me = this,",
+                                                    "    v = me.getView(),",
+                                                    "    vm = me.getViewModel(),",
+                                                    "    treepanel = me.lookupReference('treepanel'),",
+                                                    "    treeStore = me.getViewModel().getStore('locations'),",
+                                                    "    main\t= v.up('maincontainer'),",
+                                                    "    nRec= Ext.create('tavico.model.CpLocation'),",
+                                                    "    selectedNode = treepanel.getSelectionModel().getSelection()[0],",
+                                                    "    mCtr = tavico.app.getController('MainController'),",
+                                                    "    wd,",
+                                                    "    valReadOnly;",
+                                                    "",
+                                                    "mCtr.hasSeq('LCT', function(isSeq) {",
+                                                    "    if (isSeq) {",
+                                                    "        valReadOnly = true;",
+                                                    "    } else {",
+                                                    "        valReadOnly= false;",
+                                                    "    }",
+                                                    "});",
+                                                    "",
+                                                    "wd\t= Ext.create('tavico.view.WdEditLocation', {",
+                                                    "    bindRecord: nRec,",
+                                                    "    valReadOnly: valReadOnly",
+                                                    "});",
+                                                    "wd.down('#Id').setReadOnly(valReadOnly);",
+                                                    "",
+                                                    "ind = selectedNode.parentNode.indexOf(selectedNode);",
+                                                    "nRec.set({",
+                                                    "    Id: vm.get('bindRecord.Id'),",
+                                                    "    leaf: true,",
+                                                    "    ParentId: selectedNode.getData().ParentId,",
+                                                    "    project: main.projectRecord.get('id')",
+                                                    "});",
+                                                    "",
+                                                    "wd.on('successCallback', function(r) {",
+                                                    "    //selectedNode.parentNode.appendChild(r);",
+                                                    "    selectedNode.parentNode.insertChild(ind-1,r);",
+                                                    "    selectedNode.parentNode.set('leaf',false);",
+                                                    "    treeStore.sync();",
+                                                    "});",
+                                                    "wd.show();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "onMenuAddBotChildClick",
+                                            "designerId": "f115c3d5-fd3e-45df-8f20-6adcc3e5204d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "Vị trí trên"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string"
+                                    },
+                                    "name": "MyMenuItem5",
+                                    "designerId": "f3a1a464-e645-4796-8b96-fcf34e54c4cd",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMenuAddTopChildClick",
+                                                "implHandler": [
+                                                    "var me = this,",
+                                                    "    v = me.getView(),",
+                                                    "    vm = me.getViewModel(),",
+                                                    "    treepanel = me.lookupReference('treepanel'),",
+                                                    "    treeStore = me.getViewModel().getStore('locations'),",
+                                                    "    main\t= v.up('maincontainer'),",
+                                                    "    nRec= Ext.create('tavico.model.CpLocation'),",
+                                                    "    selectedNode = treepanel.getSelectionModel().getSelection()[0],",
+                                                    "    wd,",
+                                                    "    valReadOnly,",
+                                                    "    mCtr = tavico.app.getController('MainController'),",
+                                                    "    ind = selectedNode.parentNode.indexOf(selectedNode);",
+                                                    "",
+                                                    "mCtr.hasSeq('LCT', function(isSeq) {",
+                                                    "    if (isSeq) {",
+                                                    "        valReadOnly = true;",
+                                                    "    } else {",
+                                                    "        valReadOnly= false;",
+                                                    "    }",
+                                                    "});",
+                                                    "",
+                                                    "wd\t= Ext.create('tavico.view.WdEditLocation', {",
+                                                    "    bindRecord: nRec,",
+                                                    "    valReadOnly: valReadOnly",
+                                                    "});",
+                                                    "wd.down('#Id').setReadOnly(valReadOnly);",
+                                                    "",
+                                                    "nRec.set({",
+                                                    "    Id: vm.get('bindRecord.Id'),",
+                                                    "    ParentId: selectedNode.getData().ParentId,",
+                                                    "    project: main.projectRecord.get('id'),",
+                                                    "    leaf: true,",
+                                                    "    // index: ind + 1",
+                                                    "});",
+                                                    "",
+                                                    "wd.on('successCallback', function(r) {",
+                                                    "    selectedNode.parentNode.insertChild(ind,r);",
+                                                    "    //selectedNode.parentNode.set('leaf',false);",
+                                                    "    treeStore.sync();",
+                                                    "});",
+                                                    "wd.show();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "onMenuAddTopChildClick",
+                                            "designerId": "86d8bdf9-4055-4940-a029-b4b2b3109252"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-indent",
+                        "layout|flex": null,
+                        "text": "Indent",
+                        "width": 80
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "iconCls": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton109",
+                    "designerId": "df26958f-632b-4855-8d3b-c050071448cf",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onIndentClick",
+                                "implHandler": [
+                                    "var me = this,",
+                                    "    treePanel = me.lookupReference('treepanel'),",
+                                    "    treeStore = me.getViewModel().getStore('locations'),",
+                                    "    selectedNode = treePanel.getSelectionModel().getSelection()[0],",
+                                    "    selectNodeParent = selectedNode.parentNode;",
+                                    "",
+                                    "if (selectedNode) {",
+                                    "    selectedNodeInd = selectNodeParent.indexOf(selectedNode);",
+                                    "    if(selectedNodeInd > 0){",
+                                    "        previousNode = selectNodeParent.childNodes[selectedNodeInd - 1];",
+                                    "        previousNode.appendChild(selectedNode);",
+                                    "        selectedNode.set({ParentId: previousNode.id});",
+                                    "    }else{",
+                                    "        return;",
+                                    "    }",
+                                    "}",
+                                    "treeStore.sync();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onIndentClick",
+                            "designerId": "3a982134-67e1-4fe3-8b4d-b225420e505e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-outdent",
+                        "layout|flex": null,
+                        "text": "Outdent",
+                        "width": 90
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "iconCls": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton110",
+                    "designerId": "9fbd0f3f-b390-4821-ab8e-67c300a38004",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOutdentClick",
+                                "implHandler": [
+                                    "var me = this,",
+                                    "    treePanel = me.lookupReference('treepanel'),",
+                                    "    treeStore = me.getViewModel().getStore('locations'),",
+                                    "    selectedNode = treePanel.getSelectionModel().getSelection()[0],",
+                                    "    selectNodeParent = selectedNode.parentNode;",
+                                    "",
+                                    "if(Ext.isEmpty(selectNodeParent.parentNode)) return;",
+                                    "if (selectedNode) {",
+                                    "    //selectedNode.parentNode.removeChild(selectedNode);",
+                                    "    selectNodeParent.parentNode.appendChild(selectedNode);",
+                                    "    if(selectNodeParent.parentNode.id === 'root'){",
+                                    "        selectedNode.set({ParentId: ''});",
+                                    "    }",
+                                    "    else selectedNode.set({ParentId: selectNodeParent.parentNode.id});",
+                                    "}",
+                                    "if(selectNodeParent.childNodes.length === 0){",
+                                    "    selectNodeParent.set({leaf:true});",
+                                    "}",
+                                    "treeStore.sync();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onOutdentClick",
+                            "designerId": "e05b2ab4-ff4e-4689-b1f8-b6ea20cb2888"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-trash",
+                        "itemId": "delbtn",
+                        "layout|flex": null,
+                        "text": "Xóa",
+                        "width": 80
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "iconCls": "string",
+                        "width": "auto",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton15",
+                    "designerId": "1e6133a9-da0c-40f2-86ef-2975f8e65a3c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDeleteClick",
+                                "implHandler": [
+                                    "var me = this,",
+                                    "    treePanel = me.lookupReference('treepanel'),",
+                                    "    treeStore = me.getViewModel().getStore('locations'),",
+                                    "    selectedNode = treePanel.getSelectionModel().getSelection()[0];",
+                                    "",
+                                    "if (selectedNode) {",
+                                    "    selectedNode.set('id',selectedNode.getData().id);",
+                                    "    treeStore.remove(selectedNode);",
+                                    "}",
+                                    "treeStore.sync();",
+                                    "//treePanel.getSelectionModel().getSelection()[0].remove();",
+                                    "// FrmCpLocation.delNode({id:selectedNode.id},function(r){",
+                                    "//     if(r && r.success){",
+                                    "//         treeStore.sync();",
+                                    "//     }",
+                                    "// });"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onDeleteClick",
+                            "designerId": "5e2825dd-10c4-4704-be7d-b40cb2220a61"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.resizer.Splitter",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "width": 80
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "layout|flex": "number",
+                        "width": "auto"
+                    },
+                    "name": "MySplitter",
+                    "designerId": "175b8797-aa0c-4cf4-a66c-35135d5cae2b"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "Nhập tên vị trí...",
+                        "fieldLabel": "Tìm kiếm",
+                        "labelSeparator": " ",
+                        "layout|flex": null,
+                        "style": "text-align:right",
+                        "width": 450
+                    },
+                    "configAlternates": {
+                        "emptyText": "string",
+                        "fieldLabel": "string",
+                        "layout|flex": "number",
+                        "style": "string",
+                        "width": "auto",
+                        "labelSeparator": "string"
+                    },
+                    "name": "MyTextField2",
+                    "designerId": "ae149872-3ffd-44fa-ab2d-b1520752ce62",
+                    "cn": [
+                        {
+                            "type": "Ext.form.trigger.Trigger",
+                            "reference": {
+                                "name": "triggers",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": "x-form-search-trigger",
+                                "name": "search",
+                                "repeatClick": true
+                            },
+                            "configAlternates": {
+                                "cls": "string",
+                                "name": "string",
+                                "repeatClick": "boolean"
+                            },
+                            "name": "MyTrigger",
+                            "designerId": "299a7c3a-5a45-4d20-a53a-6f0c90d53d68",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "field",
+                                            "trigger",
+                                            "e"
+                                        ],
+                                        "designer|viewControllerFn": "onSearchTriggerClick",
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var me = this,",
+                                            "    treepanel = me.lookupReference('treepanel'),",
+                                            "    treeStore = me.getViewModel().getStore('locations'),",
+                                            "    filters = [],",
+                                            "    foundNode;",
+                                            "",
+                                            "treepanel.expandAll();",
+                                            "foundNode = treeStore.getRootNode().findChild('id', field.value, true);",
+                                            "",
+                                            "if(!Ext.isEmpty(field.value)) {",
+                                            "    //Ext.Array.push(filters,{field:'location', op:'in', value:['Ha Noi','Ho Chi Minh']});",
+                                            "    Ext.Array.push(filters,{field:'locdesc', op:'like', value:foundNode.Name});",
+                                            "}",
+                                            "",
+                                            "treeStore.getProxy().setExtraParam('filters',filters);",
+                                            "",
+                                            "store.load();"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "designer|viewControllerFn": "string",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "handler",
+                                    "designerId": "c551e49d-9547-4ffa-bf9b-08ceb294e01c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTextfieldSpecialkey",
+                                "implHandler": [
+                                    "var me = this,",
+                                    "    editor\t= field.ownerCt,",
+                                    "    editingPlugin = editor.editingPlugin,",
+                                    "    treepanel = me.lookupReference('treepanel'),",
+                                    "    treeStore = me.getViewModel().getStore('locations'),",
+                                    "    filters = [],",
+                                    "    selectedNode = treepanel.getSelectionModel().getSelection()[0],",
+                                    "",
+                                    "    value = field.getValue(),",
+                                    "    node,",
+                                    "    startIdx = field.startIdx || -1;",
+                                    "",
+                                    "",
+                                    "if (!e.shiftKey && e.getKey() == Ext.event.Event.ENTER && field.value.length >=2) {",
+                                    "    treepanel.expandAll();",
+                                    "    me.searchVal = field.value;",
+                                    "",
+                                    "    if (value) {",
+                                    "        startIdx = treeStore.find('Name', value, startIdx + 1, true);",
+                                    "        if (startIdx != -1) {",
+                                    "            node = treeStore.getAt(startIdx);",
+                                    "            treepanel.getSelectionModel().select(node, false);",
+                                    "        }",
+                                    "        ",
+                                    "        if (field.startIdx + 1 > 0 && startIdx == -1) {",
+                                    "            startIdx = treeStore.find('Name', value, startIdx + 1, true);",
+                                    "            if (startIdx != -1) {",
+                                    "                node = treeStore.getAt(startIdx);",
+                                    "                treepanel.getSelectionModel().select(node, false);",
+                                    "            }",
+                                    "        }",
+                                    "        field.startIdx = startIdx;",
+                                    "    }",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "specialkey",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTextfieldSpecialkey",
+                            "designerId": "71160490-f824-427d-8b9d-cdcee949c0b5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.tree.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "columnLines": true,
+                "itemId": "treepanel",
+                "reference": "treepanel",
+                "rowLines": true,
+                "store": [
+                    "{locations}"
+                ],
+                "useArrows": true
+            },
+            "configAlternates": {
+                "store": "binding",
+                "columnLines": "boolean",
+                "dock": "string",
+                "reference": "string",
+                "rootVisible": "boolean",
+                "rowLines": "boolean",
+                "useArrows": "boolean",
+                "itemId": "string"
+            },
+            "name": "MyTreePanel1",
+            "designerId": "0832c100-882f-458d-8d7f-2876dd54cc51",
+            "cn": [
+                {
+                    "type": "Ext.tree.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTreeView1",
+                    "designerId": "fc02c942-d2f2-444b-a292-9633dde9df65",
+                    "cn": [
+                        {
+                            "type": "Ext.tree.plugin.TreeViewDragDrop",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyTreeDragDropPlugin1",
+                            "designerId": "feb1b305-9c36-4890-8d1e-82d757ae45ff"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onViewDrop",
+                                "implHandler": [
+                                    "if (dropPosition === 'append') data.records[0].set('ParentId',overModel.get('id'));",
+                                    "else if(dropPosition === 'before' || dropPosition === 'after') data.records[0].set('ParentId',overModel.get('ParentId'));",
+                                    "",
+                                    "this.getViewModel().getStore('locations').sync();"
+                                ],
+                                "name": "drop",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onViewDrop",
+                            "designerId": "edae0c09-6a66-4643-ae17-055de5624452"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tree.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "Name",
+                        "text": "Vị trí",
+                        "width": 257
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTreeColumn1",
+                    "designerId": "364d6f90-0cf4-4c5e-9fff-38dad2412d4a"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "comments",
+                        "flex": 1,
+                        "itemId": "comments",
+                        "text": "Ghi chú"
+                    },
+                    "configAlternates": {
+                        "flex": "number",
+                        "text": "string",
+                        "dataIndex": "datafield",
+                        "itemId": "string"
+                    },
+                    "name": "MyColumn17",
+                    "designerId": "91e9ff6d-66f0-4e6c-a578-63fb93f5a43e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "comments1"
+                            },
+                            "configAlternates": {
+                                "itemId": "string"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "d581ed1c-3ee2-47a1-a245-a71fa1b4859e"
+                        }
+                    ]
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTreePanelBeforeItemExpand",
+                        "implHandler": [
+                            "",
+                            "",
+                            "var me\t= this,",
+                            "    locStore\t= me.getViewModel().getStore('locations'),",
+                            "    v\t= me.getView(),",
+                            "    main\t= v.up('maincontainer');",
+                            "",
+                            "if (!main.projectRecord) {",
+                            "    Ext.History.add('home');",
+                            "    return;",
+                            "}",
+                            "",
+                            "if(nodeinterface.getData().id === 'root') return;",
+                            "nodeinterface.set('id',nodeinterface.getData().id);",
+                            "locStore.getProxy().setExtraParam('node', nodeinterface.getData().id);"
+                        ],
+                        "name": "beforeitemexpand",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onTreePanelBeforeItemExpand",
+                    "designerId": "e1dbaa60-2985-4256-be2c-cf1a686a42fb"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTreePanelItemContextMenu",
+                        "implHandler": [
+                            "// e.preventDefault();",
+                            "// var me = this,",
+                            "//     menu = dataview.myMenu,",
+                            "//     treepanel = me.lookupReference('treepanel'),",
+                            "//     treeStore = me.getViewModel().getStore('locations'),",
+                            "//     rootId;",
+                            "",
+                            "// // if the menu doesn't exist yet create it",
+                            "// if (!menu) {",
+                            "//     menu = Ext.create('Ext.menu.Menu', {",
+                            "//         width: 200,",
+                            "//         items: [{",
+                            "//             text: 'Xóa vị trí',",
+                            "//             handler: function() {",
+                            "//                 record.remove();",
+                            "//                 treeStore.sync();",
+                            "//             },",
+                            "",
+                            "//         }]",
+                            "//     });",
+                            "// }",
+                            "",
+                            "",
+                            "// var nRec = {Name:'New Location',leaf:true,comments:'',ParentId:record.getData().ParentId,project:me.projectName};",
+                            "",
+                            "// menu.add({text: 'Thêm vị trí con',",
+                            "//           handler: function(){",
+                            "//               nRec = {Name:'New Location',leaf:true,comments:'',ParentId:record.getData().id,project:me.projectName};",
+                            "//               record.appendChild(",
+                            "//                   nRec",
+                            "//               );",
+                            "//               record.set('leaf',false);",
+                            "//               treeStore.sync();",
+                            "//               record.expand();",
+                            "//           }});",
+                            "",
+                            "// menu.add({text: 'Thêm vị trí dưới',",
+                            "//           handler: function(){",
+                            "//               record.parentNode.appendChild(",
+                            "//                   nRec",
+                            "//               );",
+                            "//               record.parentNode.set('leaf',\"N\");",
+                            "//               treeStore.sync();",
+                            "//           }});",
+                            "",
+                            "// var ind = record.parentNode.indexOf(record);",
+                            "// menu.add({text: 'Thêm vị trí trên',",
+                            "//           handler: function(){",
+                            "//               if(ind === 0) ind = 0;",
+                            "//               record.parentNode.insertChild(ind,nRec);",
+                            "//               record.parentNode.set('leaf',\"N\");",
+                            "//               treeStore.sync();",
+                            "//           }});",
+                            "",
+                            "// // show the menu where the click occurred",
+                            "// menu.showAt(e.getXY());"
+                        ],
+                        "name": "itemcontextmenu",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onTreePanelItemContextMenu",
+                    "designerId": "7e69639e-b5aa-43eb-958c-c0b4f130499b"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "treepanel"
+                        ],
+                        "fn": "onTreePanelEdit",
+                        "implHandler": [
+                            "var me = this,",
+                            "    treeStore = me.getViewModel().getStore('locations');",
+                            "treeStore.sync();"
+                        ],
+                        "name": "edit",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string",
+                        "designer|params": "typedarray"
+                    },
+                    "name": "onTreePanelEdit",
+                    "designerId": "efc41eb6-c09c-465f-9919-89ce8860d056"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTreeCellDblClick",
+                        "implHandler": [
+                            "var me = this,",
+                            "    wd = Ext.create('tavico.view.WdEditLocation'),",
+                            "    treepanel = me.lookupReference('treepanel'),",
+                            "    treeStore = me.getViewModel().getStore('locations'),",
+                            "    selectedNode = treepanel.getSelectionModel().getSelection()[0],",
+                            "    index = selectedNode.parentNode.indexOf(selectedNode),",
+                            "    idEdit = 2014,",
+                            "    ops = tavico.app.getController('MainController').authConfig.operations;",
+                            "",
+                            "//selectedNode.set('id',selectedNode.getData().id);",
+                            "",
+                            "var wd,",
+                            "    nRec = selectedNode;",
+                            "nRec.set('Id',record.get('id'));",
+                            "",
+                            "if (nRec) {",
+                            "    wd = Ext.create('tavico.view.WdEditLocation', {",
+                            "        bindRecord: nRec.copy(),",
+                            "        valReadOnly: true",
+                            "    });",
+                            "    wd.down('#Id').setReadOnly(true);",
+                            "    if (ops.length <= idEdit || ops[idEdit] == 'N'){",
+                            "        Ext.Array.each(wd.down('#frmDetail').query('field'),function(f){",
+                            "            f.setReadOnly(true);",
+                            "        });",
+                            "        if(wd.down('#savebtn')) wd.down('#savebtn').destroy();",
+                            "        if(wd.down('#cancelbtn')) wd.down('#cancelbtn').destroy();",
+                            "        if(wd.down('#closebtn')) wd.down('#closebtn').show();",
+                            "    }",
+                            "    wd.on('successCallback', function(r) {",
+                            "        var d = r.getData();",
+                            "        delete d.id;",
+                            "        nRec.set(d);",
+                            "        treeStore.sync();",
+                            "    });",
+                            "    wd.show();",
+                            "}"
+                        ],
+                        "name": "celldblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onTreeCellDblClick",
+                    "designerId": "cf6c950f-a777-4041-8534-92474aec2687"
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "clicksToEdit": 1
+                    },
+                    "configAlternates": {
+                        "clicksToEdit": "number"
+                    },
+                    "name": "MyCellEditingPlugin4",
+                    "designerId": "d3bd23ef-261d-4b00-aff9-6a75d5d2c016"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "editor",
+                            "context"
+                        ],
+                        "fn": "onTreepanelBeforeEdit",
+                        "implHandler": [
+                            "var me = this,",
+                            "    column = context.column,",
+                            "    record = context.record,",
+                            "    idEdit = 2014,",
+                            "    ops = tavico.app.getController('MainController').authConfig.operations;",
+                            "",
+                            "if(column.dataIndex === 'comments') {",
+                            "    if (ops.length <= idEdit || ops[idEdit] == 'N'){",
+                            "        let cmtield = context.column.getEditor();",
+                            "        cmtield.setReadOnly(true);",
+                            "    }",
+                            "}"
+                        ],
+                        "name": "beforeedit",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onTreepanelBeforeEdit",
+                    "designerId": "20010f7a-62bc-496a-a38e-5bf6aedd3ba6"
+                }
+            ]
+        }
+    ]
+}

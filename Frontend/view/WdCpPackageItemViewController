@@ -1,0 +1,175 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wdcppackageitem",
+        "designer|userClassName": "WdCpPackageitemViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "1807c33f-d588-49a0-800c-9f006a613e8c",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "var me = this,",
+                    "    main\t= Ext.ComponentQuery.query('maincontainer')[0],",
+                    "    mCtr\t= tavico.app.getController('MainController'),",
+                    "    txlocation\t= me.lookupReference('txlocation'),",
+                    "    v\t= me.getView(),",
+                    "    vm\t= me.getViewModel(),",
+                    "    locStore\t= vm.getStore('locations');",
+                    "",
+                    "me.callParent(arguments);",
+                    "",
+                    "mCtr.mappingAnalysis(v, \"pke\");",
+                    "mCtr.mappingExtendedField(v, \"PKE\");",
+                    "",
+                    "me.getViewModel().set('bindRecord', v.bindRecord);",
+                    "",
+                    "txlocation.setStore(locStore);",
+                    "txlocation.mon(locStore, {",
+                    "    scope: txlocation,",
+                    "    load: txlocation.onLoad,",
+                    "    update: txlocation.onUpdate",
+                    "});",
+                    "locStore.getProxy().setExtraParam('project', main.projectRecord.get('id'));",
+                    "locStore.setRootVisible(false);",
+                    "",
+                    "locStore.load(function() {",
+                    "    locStore.getRoot().expand();",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "e3bd0a19-cb5e-476f-b4bb-41cdbe1e8b7a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "priceChange",
+                "implHandler": [
+                    "var me = this,",
+                    "    vm\t= me.getViewModel(),",
+                    "    r\t= vm.get('bindRecord'),",
+                    "    qty\t= r.get('quantity'),",
+                    "    mprice\t= r.get('materialprice'),",
+                    "    sprice\t= r.get('serviceprice'),",
+                    "    rate\t= r.get('vatrate'),",
+                    "    mvalue, svalue, vatamt, total;",
+                    "",
+                    "mvalue = qty * mprice;",
+                    "svalue = qty * sprice;",
+                    "vatamt = (mvalue + svalue) * rate/100;",
+                    "",
+                    "if(Number.isNaN(mvalue)) mvalue = 0;",
+                    "if(Number.isNaN(vatamt)) vatamt = 0;",
+                    "if(Number.isNaN(svalue)) svalue = 0;",
+                    "total = mvalue + svalue + vatamt;",
+                    "",
+                    "r.set('materialvalue', mvalue);",
+                    "r.set('servicevalue', svalue);",
+                    "r.set('vatamt', vatamt);",
+                    "r.set('totalamt', total);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "priceChange",
+            "designerId": "2bd4ca38-1846-4c84-8843-b1c2e49f4033"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "valueChange",
+                "implHandler": [
+                    "var me = this,",
+                    "    vm\t= me.getViewModel(),",
+                    "    r\t= vm.get('bindRecord'),",
+                    "    qty\t= r.get('quantity'),",
+                    "    mvalue \t= r.get('materialvalue'),",
+                    "    rate\t= r.get('vatrate'),",
+                    "    sprice\t= r.get('serviceprice'),",
+                    "    mprice, svalue, vatamt, total;",
+                    "",
+                    "if (qty > 0) {",
+                    "    mprice =  mvalue / qty;",
+                    "    svalue = sprice * qty;",
+                    "    vatamt = (mvalue + svalue) * rate/100;",
+                    "",
+                    "    if(Number.isNaN(mvalue)) mvalue = 0;",
+                    "    if(Number.isNaN(vatamt)) vatamt = 0;",
+                    "    if(Number.isNaN(svalue)) svalue = 0;",
+                    "    total = mvalue + svalue + vatamt;",
+                    "",
+                    "    r.set('materialprice', mprice);",
+                    "    r.set('servicevalue', svalue);",
+                    "    r.set('vatamt', vatamt);",
+                    "    r.set('totalamt', total);",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "valueChange",
+            "designerId": "9d6867a2-0f2c-451f-b716-0bede44e39f1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "vatChange",
+                "implHandler": [
+                    "var me = this,",
+                    "    vm\t= me.getViewModel(),",
+                    "    r\t= vm.get('bindRecord'),",
+                    "    total;",
+                    "",
+                    "total = r.get('materialvalue') + r.get('servicevalue') + r.get('vatamt');",
+                    "r.set('totalamt', total);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "vatChange",
+            "designerId": "9f5688bd-c543-45ae-8fd2-96743260beef"
+        }
+    ]
+}

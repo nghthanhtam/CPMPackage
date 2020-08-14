@@ -1,0 +1,130 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "locationpanel",
+        "designer|userClassName": "LocationPanelViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "LocationPanelViewController1",
+    "designerId": "29bdb417-d653-4d41-ad7a-783f931cb9a4",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "var me\t= this,",
+                    "    v\t= me.getView(),",
+                    "    main\t= v.up('maincontainer'),",
+                    "    treePanel = me.lookupReference('treepanel'),",
+                    "    locStore\t= me.getViewModel().getStore('locations'),",
+                    "    path\t= document.location.pathname,",
+                    "    breadcrumbTitle = Ext.ComponentQuery.query('maincontainer #breadcrumbTitle')[0],",
+                    "    ops = tavico.app.getController('MainController').authConfig.operations;",
+                    "",
+                    "me.callParent(arguments);",
+                    "",
+                    "if (!main.projectRecord) {",
+                    "    Ext.History.add('home');",
+                    "    return;",
+                    "}",
+                    "",
+                    "me.projectName = main.projectRecord.get('id');",
+                    "me.setPermit(ops);",
+                    "locStore.getProxy().setExtraParam('project', main.projectRecord.get('id'));",
+                    "treePanel.rootVisible = false;",
+                    "locStore.load(function() {",
+                    "    locStore.getRoot().expand();",
+                    "});",
+                    "",
+                    "breadcrumbTitle.setHtml('<a class=\"tvc-titlebar\" href=\"'+path+'#project\">'+main.projectRecord.get('projectname')+'</a> <span class=\"x-fa fa-chevron-right\"></span> <strong>'+'Danh mục khu vực dự án'+'</strong>');"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "8dbc3c17-9c4b-4551-8a29-8cd66eca2d6b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "pars",
+                    "rec"
+                ],
+                "fn": "initDeleteParams",
+                "implHandler": [
+                    "return Ext.apply(pars,{",
+                    "    project: rec.get('project'),",
+                    "    location: rec.get('location')",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "initDeleteParams",
+            "designerId": "10b64259-4371-46d0-991b-839919bef6e1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "ops"
+                ],
+                "fn": "setPermit",
+                "implHandler": [
+                    "var me\t= this,",
+                    "    tbar = me.lookupReference('tbar'),",
+                    "    idAdd\t= 2013,",
+                    "    idEdit\t= 2014,",
+                    "    idDelete= 2015,",
+                    "    idImport = 2016,",
+                    "    idExport = 2017,",
+                    "    idAttach = 2018,",
+                    "    addBtn =  tbar.down('#addbtn'),",
+                    "    delBtn = tbar.down('#delbtn');",
+                    "",
+                    "if (ops.length <= idAdd || ops[idAdd] == 'N') {",
+                    "    addBtn.destroy();",
+                    "}",
+                    "if ((ops.length <= idDelete || ops[idDelete] == 'N') && delBtn) delBtn.destroy();"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "setPermit",
+            "designerId": "8176ac25-60bb-4127-872e-017ad6d2d82d"
+        }
+    ]
+}

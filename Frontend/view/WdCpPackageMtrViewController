@@ -1,0 +1,58 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wdcppackagemtr",
+        "designer|userClassName": "WdCpPackageMtrViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "WdCpPackageItemWdBlkViewController2",
+    "designerId": "74b32c08-8414-400c-a845-fc6787383087",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "var me = this,",
+                    "    v\t= me.getView();",
+                    "me.getViewModel().set('bindRecord', v.bindRecord);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "21d8c4d4-2c33-41d8-b4c9-cff6a042997a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "QtyMtrServiceChange"
+            },
+            "configAlternates": {
+                "fn": "string"
+            },
+            "name": "QtyMtrServiceChange",
+            "designerId": "ba4d879f-c32d-4be4-892e-c47a54a9a570"
+        }
+    ]
+}

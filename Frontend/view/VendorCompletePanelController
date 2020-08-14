@@ -1,0 +1,256 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "vendorcompletepanel",
+        "designer|userClassName": "VendorCompletePanelController",
+        "mixins": [
+            "{baseController: 'tavico.view.BaseReferViewController'}"
+        ]
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "mixins": "object"
+    },
+    "name": "ProgressLogPanelViewController1",
+    "designerId": "eaf05fd1-e164-426d-be2c-5eb17d6579f7",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "var me = this,",
+                    "    v = me.getView(),",
+                    "    viewModel = me.getViewModel(),",
+                    "    main\t= v.up('maincontainer'),",
+                    "    s\t= viewModel.getStore('masters'),",
+                    "    contracts\t= viewModel.getStore('contracts'),",
+                    "    path\t= document.location.pathname,",
+                    "    breadcrumbTitle = Ext.ComponentQuery.query('maincontainer #breadcrumbTitle')[0],",
+                    "    mCtr\t= tavico.app.getController('MainController');",
+                    "",
+                    "me.callParent(arguments);",
+                    "",
+                    "if (!main.projectRecord) {",
+                    "    Ext.History.add('home');",
+                    "    return;",
+                    "}",
+                    "",
+                    "if (!main.projectRecord.get('wcvsprogress')) {",
+                    "    FrmCpProject.get({",
+                    "        id: main.projectRecord.get('id')",
+                    "    } , function(res) {",
+                    "        if (res && res.success && !Ext.isEmpty(res.data)) {",
+                    "            var d\t= res.data[0],",
+                    "                m;",
+                    "            d.id = d.project;",
+                    "            main.projectRecord.set(d);",
+                    "        }",
+                    "    });",
+                    "}",
+                    "FrmCsOperator.get({operatorid: tavico.app.getController('MainController').authConfig.operatorid},function(r){",
+                    "    if (r && r.success && !Ext.isEmpty(r.data)) {",
+                    "       me.operatorname = r.data[0].name;",
+                    "    }",
+                    "});",
+                    "",
+                    "breadcrumbTitle.setHtml('<a class=\"tvc-titlebar\" href=\"' + path + '#project\">' + main.projectRecord.get('projectname')+'</a> <span class=\"x-fa fa-chevron-right\"></span> <strong>'+v.title+'</strong>');",
+                    "s.getProxy().setExtraParam('project', main.projectRecord.get('id'));",
+                    "s.load();",
+                    "contracts.getProxy().setExtraParam('project', main.projectRecord.get('id'));",
+                    "contracts.load();",
+                    "",
+                    "me.mixins.baseController.setupTbar.call(this, 'init');",
+                    "",
+                    "if (v.args) {",
+                    "    me.processArgs(v.args);",
+                    "    delete v.args;",
+                    "}",
+                    "",
+                    "me.setPermit(mCtr.authConfig.operations);",
+                    "",
+                    "s.model.proxyConfig.api.create = 'FrmCpWorkCom.addVendor';",
+                    "s.model.proxyConfig.api.update = 'FrmCpWorkCom.updVendor';",
+                    "s.model.proxyConfig.api.destroy = 'FrmCpWorkCom.delVendor';"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "5f16d5c0-f730-4ec9-a564-b3e69becc3fe"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record",
+                    "cb"
+                ],
+                "fn": "setDetails",
+                "implHandler": [
+                    "var me = this,",
+                    "    v  = me.getView(),",
+                    "    vm = me.getViewModel(),",
+                    "    gridDet = me.lookupReference('gridVendorDet'),",
+                    "    sDet\t= vm.getStore('masterdetails');",
+                    "sDet.getProxy().setExtraParam('cwcref',record.get('cwcref'));",
+                    "sDet.getProxy().setExtraParam('requesteddate', Ext.Date.format(record.get('requesteddate'),'Y-m-d'));",
+                    "sDet.load(function(recs) {",
+                    "    var lock_data = localStorage.getItem('lock_data');",
+                    "    if(!(Ext.isEmpty(lock_data))){",
+                    "        lock_data = lock_data.split('|');",
+                    "        lock_data.forEach(function(r){",
+                    "            if(r !== ''){",
+                    "                let col = gridDet.down('gridcolumn[text='+r+']');",
+                    "                gridDet.lock(col);",
+                    "            }",
+                    "        });",
+                    "    }",
+                    "    if (cb) cb.call(me, recs);",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "setDetails",
+            "designerId": "3a6f4487-f23b-41ed-941e-e719ae4b0e00"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "e"
+                ],
+                "fn": "enableDetButtons",
+                "implHandler": [
+                    "var me = this,",
+                    "    frmdetail = me.lookupReference('frmdetail'),",
+                    "    gp = me.lookupReference('gridVendorDet'),",
+                    "    tbtns\t= gp.query('toolbar>button');",
+                    "",
+                    "gp.setReadOnly(!e);",
+                    "Ext.Array.each(tbtns, function(btn) {",
+                    "    btn[e ? 'enable' : 'disable']();",
+                    "});",
+                    "gp.down('#historyBtn').enable();"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "enableDetButtons",
+            "designerId": "2a9a127f-9a99-4544-a7c6-bcd24d0c42f9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "ops"
+                ],
+                "fn": "setPermit",
+                "implHandler": [
+                    "var me\t= this,",
+                    "    v\t= me.getView(),",
+                    "    tbar\t= me.lookupReference('tbar'),",
+                    "    idAdd\t= 2236,",
+                    "    idEdit\t= 2237,",
+                    "    idDelete= 2238,",
+                    "    idImportItems = 2239,",
+                    "    idImport = 2240,",
+                    "    idExport\t= 2241,",
+                    "    idAttach = 2242,",
+                    "    idApprove = 2246,",
+                    "    approveBtn = tbar.down('#approvebtn'),",
+                    "    addBtn =  tbar.down('#addbtn'),",
+                    "    copyBtn = tbar.down('#copybtn'),",
+                    "    editBtn  = tbar.down('#editbtn'),",
+                    "    delBtn = tbar.down('#delbtn'),",
+                    "    impBtn = tbar.down('#importbtn'),",
+                    "    impPROBtn = tbar.down('#importPRObtn'),",
+                    "    expBtn = tbar.down('#exportbtn'),",
+                    "    attachBtn = tbar.down('#attachbtn');",
+                    "",
+                    "if (ops.length <= idAdd || ops[idAdd] == 'N') {",
+                    "    if(addBtn) addBtn.destroy();",
+                    "    if(copyBtn) copyBtn.destroy();",
+                    "}",
+                    "if ((ops.length <= idEdit || ops[idEdit] == 'N') && editBtn) editBtn.destroy();",
+                    "if ((ops.length <= idDelete || ops[idDelete] == 'N') && delBtn) delBtn.destroy();",
+                    "if ((ops.length <= idImport || ops[idImport] == 'N') && impBtn) impBtn.destroy();",
+                    "if ((ops.length <= idImportItems || ops[idImportItems] == 'N') && impPROBtn) impPROBtn.destroy();",
+                    "if ((ops.length <= idExport || ops[idExport] == 'N') && expBtn) expBtn.destroy();",
+                    "if ((ops.length <= idAttach || ops[idAttach] == 'N') && attachBtn) attachBtn.destroy();",
+                    "if ((ops.length <= idApprove || ops[idApprove] == 'N') && approveBtn) approveBtn.destroy();"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "setPermit",
+            "designerId": "7fc13056-c0a8-4fe9-96ff-af445249f26e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "pars",
+                    "rec"
+                ],
+                "fn": "initDeleteParams",
+                "implHandler": [
+                    "return Ext.apply(pars,{",
+                    "    project: rec.get('project'),",
+                    "    cwcref: rec.get('cwcref')",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "initDeleteParams",
+            "designerId": "af719771-24e3-45b3-939d-54bad549c42b"
+        }
+    ]
+}

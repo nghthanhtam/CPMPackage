@@ -1,0 +1,63 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CpDefinition",
+        "model": "CpDefinition",
+        "storeId": "CpDefinition"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyDirectStore16",
+    "designerId": "693427d0-fbe2-42f8-95c0-bb3f0930d4af",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "read: 'FrmCpDefinition.get'",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "api": "object",
+                "extraParams": "object"
+            },
+            "name": "MyDirectProxy6",
+            "designerId": "495f2dba-ee74-428c-8f43-d104a2a25434",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data",
+                        "totalProperty": "totalCount"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string",
+                        "totalProperty": "string"
+                    },
+                    "name": "MyJsonReader6",
+                    "designerId": "0b6ed1f8-9c28-4b23-8b83-74ab24625dc4"
+                }
+            ]
+        }
+    ]
+}

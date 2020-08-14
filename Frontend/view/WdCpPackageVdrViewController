@@ -1,0 +1,70 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wdcppackagevdr",
+        "designer|userClassName": "WdCpPackageVdrViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "WdCpPackageItemWdBlkViewController4",
+    "designerId": "8ae237ce-320b-4925-b787-bcc17029252f",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "var me = this,",
+                    "    v = me.getView();",
+                    "me.getViewModel().set('bindRecord', v.bindRecord);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "99798f12-3c29-444b-9ad0-5af020e2595a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "calTotal",
+                "implHandler": [
+                    "var me = this,",
+                    "    vm = me.getViewModel(),",
+                    "    r = vm.get('bindRecord'),",
+                    "    bidprice = r.get('bidprice'),",
+                    "    impactamt = r.get('impactamt'),",
+                    "    externalamt = r.get('externalamt'),",
+                    "    discountamt\t= r.get('discountamt'),",
+                    "    vatamt =  r.get('vatamt');",
+                    "r.set('totalawardprice',bidprice + impactamt + externalamt - discountamt + vatamt);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "calTotal",
+            "designerId": "3607ff44-c003-4b76-8364-b4f45409d7a7"
+        }
+    ]
+}

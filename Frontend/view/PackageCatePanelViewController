@@ -1,0 +1,206 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "packagecatepanel",
+        "designer|userClassName": "PackageCatePanelViewController",
+        "mixins": [
+            "{baseController: 'tavico.view.BaseReferViewController'}"
+        ]
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "mixins": "object"
+    },
+    "name": "CostCodeNodePanelViewController1",
+    "designerId": "c0239c71-e95b-45a5-b771-b373fc07366f",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "var me = this,",
+                    "    v = me.getView(),",
+                    "    viewModel = me.getViewModel(),",
+                    "    main\t= v.up('maincontainer'),",
+                    "    s\t= viewModel.getStore('masters'),",
+                    "    path\t= document.location.pathname,",
+                    "    breadcrumbTitle = Ext.ComponentQuery.query('maincontainer #breadcrumbTitle')[0],",
+                    "    mCtr\t= tavico.app.getController('MainController');",
+                    "",
+                    "me.callParent(arguments);",
+                    "",
+                    "mCtr.mappingAnalysis(v, \"pkc\");",
+                    "mCtr.mappingExtendedField(v, \"PKC\");",
+                    "",
+                    "breadcrumbTitle.setHtml('<a class=\"tvc-titlebar\" href=\"'+path+'#project\">'+'Trang chủ'+'</a> <span class=\"x-fa fa-chevron-right\"></span> <strong>'+",
+                    "                        v.title+'</strong>');",
+                    "",
+                    "s.load(function() {",
+                    "    s.getRoot().expand(true);",
+                    "});",
+                    "",
+                    "me.mixins.baseController.setupTbar.call(me, 'init');",
+                    "me.setPermit(mCtr.authConfig.operations);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "10499641-0a55-41a4-89ce-a2f19254e2ab"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "ops"
+                ],
+                "fn": "setPermit",
+                "implHandler": [
+                    "var me\t= this,",
+                    "    v\t= me.getView(),",
+                    "    tbar\t= me.lookupReference('tbar'),",
+                    "    idAdd\t= 2351,",
+                    "    idEdit\t= 2352\t,",
+                    "    idDelete\t= 2353,",
+                    "    idImport\t= 2354,",
+                    "    idExport\t= 2355;",
+                    "",
+                    "if (ops.length <= idAdd || ops[idAdd] == 'N') {",
+                    "    tbar.down('#addbtn').destroy();",
+                    "    tbar.down('#copybtn').destroy();",
+                    "}",
+                    "if (ops.length <= idEdit || ops[idEdit] == 'N') tbar.down('#editbtn').destroy();",
+                    "if (ops.length <= idDelete || ops[idDelete] == 'N') tbar.down('#delbtn').destroy();",
+                    "if (ops.length <= idImport || ops[idImport] == 'N') tbar.down('#importbtn').destroy();",
+                    "if (ops.length <= idExport || ops[idExport] == 'N') tbar.down('#exportbtn').destroy();"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "setPermit",
+            "designerId": "0fe09398-9034-4048-8179-692329d99356"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "val"
+                ],
+                "fn": "filterStore",
+                "implHandler": [
+                    "var me = this,",
+                    "    vm\t= me.getViewModel(),",
+                    "    store = vm.getStore('masters'),",
+                    "    searchString = val.toLowerCase(),",
+                    "    filterFn = function(node) {",
+                    "        var children = node.childNodes,",
+                    "            len = children && children.length,",
+                    "            visible = v.test(node.get('packagecate')) || v.test(node.get('packagetitle')),",
+                    "            i;",
+                    "",
+                    "        // If the current node does NOT match the search condition",
+                    "        // specified by the user...",
+                    "        if (!visible) {",
+                    "",
+                    "            // Check to see if any of the child nodes of this node",
+                    "            // match the search condition.  If they do then we will",
+                    "            // mark the current node as visible as well.",
+                    "            for (i = 0; i < len; i++) {",
+                    "                if (children[i].isLeaf()) {",
+                    "                    visible = children[i].get('visible');",
+                    "                } else {",
+                    "                    visible = filterFn(children[i]);",
+                    "                }",
+                    "                if (visible) {",
+                    "                    break;",
+                    "",
+                    "                }",
+                    "            }",
+                    "",
+                    "        } else { // Current node matches the search condition...",
+                    "",
+                    "            // Force all of its child nodes to be visible as well so",
+                    "            // that the user is able to select an example to display.",
+                    "            for (i = 0; i < len; i++) {",
+                    "                children[i].set('visible', true);",
+                    "            }",
+                    "",
+                    "        }",
+                    "",
+                    "        return visible;",
+                    "    }, v;",
+                    "",
+                    "me.lastFilterValue = searchString;",
+                    "if (searchString.length < 1) {",
+                    "    store.clearFilter();",
+                    "",
+                    "} else {",
+                    "    v = new RegExp(searchString, 'i');",
+                    "    store.getFilters().replaceAll({",
+                    "        filterFn: filterFn",
+                    "  });",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "filterStore",
+            "designerId": "c8b8244d-d150-432e-bee8-7ac00261da63"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "search",
+                    "subject"
+                ],
+                "fn": "strMarkRedPlus",
+                "implHandler": [
+                    "return subject.replace(new RegExp('(' + search + ')', \"gi\"), \"<span style='color: red;'><b>$1</b></span>\"); \t \t"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "strMarkRedPlus",
+            "designerId": "51503585-4df6-4414-bac8-4b40a456de5c"
+        }
+    ]
+}

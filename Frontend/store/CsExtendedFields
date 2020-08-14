@@ -1,0 +1,66 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CsExtendedFields",
+        "model": "CsExtendedField",
+        "storeId": "CsExtendedFields"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "CsAnalysisCategories1",
+    "designerId": "5ca8e228-a6e1-4436-a75a-d6153ae38325",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "read: 'FrmCsExtendedField.get'",
+                    "}"
+                ],
+                "extraParams": [
+                    "{formid: -1}"
+                ]
+            },
+            "configAlternates": {
+                "api": "object",
+                "extraParams": "object"
+            },
+            "name": "MyDirectProxy6",
+            "designerId": "766fb800-fef8-49aa-8ae5-f3ebcbe5a77b",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data",
+                        "totalProperty": "totalCount"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string",
+                        "totalProperty": "string"
+                    },
+                    "name": "MyJsonReader6",
+                    "designerId": "e57aa5c2-7093-45e9-9d1c-3443a6f0496f"
+                }
+            ]
+        }
+    ]
+}

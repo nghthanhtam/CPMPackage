@@ -1,0 +1,95 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "locationpanel",
+        "designer|userClassName": "LocationPanelViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "LocationPanelViewModel1",
+    "designerId": "bfed30cb-f47d-40e2-ba81-90496e593311",
+    "cn": [
+        {
+            "type": "Ext.data.TreeStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "CpLocation",
+                "name": "locations",
+                "root": [
+                    "{",
+                    "expanded: false",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "name": "string",
+                "autoLoad": "boolean",
+                "model": "model",
+                "root": "object"
+            },
+            "name": "MyTreeStore2",
+            "designerId": "2ae597cd-be9e-4ef1-af81-044df10e57be",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Direct",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "api": [
+                            "{",
+                            "read: 'FrmCpLocation.getNode',",
+                            "create: 'FrmCpLocation.addNode',",
+                            "update: 'FrmCpLocation.updNode',",
+                            "destroy: 'FrmCpLocation.delNode'",
+                            "",
+                            "}"
+                        ],
+                        "extraParams": [
+                            "{project: '-'}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "api": "object",
+                        "extraParams": "object"
+                    },
+                    "name": "MyDirectProxy",
+                    "designerId": "3fc5ef64-aa5b-4ca1-882b-245f21651c6b",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootProperty": "data",
+                                "totalProperty": "totalCount"
+                            },
+                            "configAlternates": {
+                                "rootProperty": "string",
+                                "totalProperty": "string"
+                            },
+                            "name": "MyJsonReader1",
+                            "designerId": "b9b09350-d2ca-4af8-a505-9032c70d9dde"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

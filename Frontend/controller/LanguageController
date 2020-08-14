@@ -1,0 +1,46 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LanguageController"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyController",
+    "designerId": "fc5efb82-1053-4b5f-a354-764758de489a",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "onLaunch",
+                "implHandler": [
+                    "LanguageControl = {",
+                    "    translate: function(text) {",
+                    "        return text;",
+                    "    }",
+                    "};"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onLaunch",
+            "designerId": "442de4ac-1fdc-4e21-b315-3e58481d9abb"
+        }
+    ]
+}
